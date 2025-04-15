@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
+
+
 const cors = require('cors');
 const socketIO = require('socket.io')(http,{
     cors:{
-        origin:'exp://172.22.36.155:8081'
+        origin:'exp://172.22.26.74:8081'
     }
 })
 const PORT = 4000;
@@ -26,6 +28,8 @@ socketIO.on('connection',(socket)=>{
         console.log(msg)
     })
 })
+
+
 
 app.get('/api',(req,res)=>{
     console.log(req,res);
